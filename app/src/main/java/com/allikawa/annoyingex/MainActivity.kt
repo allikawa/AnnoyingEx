@@ -11,9 +11,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val annoyingExApp = (application as AnnoyingExApp)
+        val annoyingExManager = annoyingExApp.annoyingExManager
+        val annoyingExNotificationManager = annoyingExApp.annoyingExNotificationManager
+
         btnEx.setOnClickListener {
-//            Log.i(TAG, "test")
-            (application as AnnoyingExApp).annoyingExManager.startAnnoyingEx()
+            annoyingExManager.startAnnoyingEx()
+            annoyingExNotificationManager.postMsg()
+        }
+
+        btnStop.setOnClickListener {
+            annoyingExManager.stopWork()
         }
     }
 }
