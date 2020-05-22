@@ -16,15 +16,11 @@ class AnnoyingExManager(private val context: Context) {
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .build()
 
-            val workRequest = PeriodicWorkRequestBuilder<SendMsgWorker>(20, TimeUnit.MINUTES)
-                .setInitialDelay(5000, TimeUnit.MILLISECONDS)
+            val workRequest = OneTimeWorkRequestBuilder<AnnoyingExNotificationWorker>()
+                .setInitialDelay(1000, TimeUnit.MILLISECONDS)
                 .setConstraints(constraints)
                 .addTag(EX_WORK_REQUEST_TAG)
                 .build()
-
-//        val annoyingExRequestID = workRequest.id
-//
-//        workManager.cancelWorkById(annoyingExRequestID)
 
             workManager.enqueue(workRequest)
         }

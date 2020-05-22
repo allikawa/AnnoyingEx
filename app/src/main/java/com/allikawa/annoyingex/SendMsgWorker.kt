@@ -15,18 +15,6 @@ class SendMsgWorker(private val context: Context, workParams: WorkerParameters):
     override fun doWork(): Result {
         Log.i("allikawa", "do you still love me")
 
-//        val queue = Volley.newRequestQueue(this)
-//        val url = "https://raw.githubusercontent.com/echeeUW/codesnippets/master/ex_messages.json"
-//        val stringRequest = StringRequest(
-//            Request.Method.GET, url,
-//            Response.Listener<String> { response ->
-//                // Display the first 500 characters of the response string.
-//            },
-//            Response.ErrorListener {
-//
-//            })
-//        queue.add(stringRequest)
-
         return Result.success()
     }
 

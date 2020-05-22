@@ -13,11 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         val annoyingExApp = (application as AnnoyingExApp)
         val annoyingExManager = annoyingExApp.annoyingExManager
-        val annoyingExNotificationManager = annoyingExApp.annoyingExNotificationManager
+//        val annoyingExNotificationManager = annoyingExApp.annoyingExNotificationManager
 
         btnEx.setOnClickListener {
             annoyingExManager.startAnnoyingEx()
-            annoyingExNotificationManager.postMsg()
+//            annoyingExNotificationManager.postMsg()
         }
 
         btnStop.setOnClickListener {
